@@ -29,6 +29,9 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
 
+//Set up Promises with Mongoose
+mongoose.Promise = global.Promise;
+
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<user1>:<password1>@ds121189.mlab.com:21189/heroku_mfj5q259";
