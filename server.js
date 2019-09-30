@@ -16,6 +16,12 @@ var PORT = 3000;
 // Initialize Express
 var app = express();
 
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Configure middleware
 
 // Use morgan logger for logging requests
@@ -32,9 +38,9 @@ app.use(express.static("public"));
 //Set up Promises with Mongoose
 mongoose.Promise = global.Promise;
 
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<user1>:<password1>@ds121189.mlab.com:21189/heroku_mfj5q259";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<user1>:<password1>@ds121189.mlab.com:21189/heroku_mfj5q259";
 
 mongoose.connect(MONGODB_URI);
 
