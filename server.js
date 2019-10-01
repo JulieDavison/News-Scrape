@@ -42,9 +42,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<user1>:<password1>@ds121189.mlab.com:21189/heroku_mfj5q259";
 
-mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI);
 
-// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Routes
 
